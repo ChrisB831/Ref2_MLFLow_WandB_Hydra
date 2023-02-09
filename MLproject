@@ -1,0 +1,31 @@
+name: nyc_airbnb
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+
+      steps:
+        description: Comma-separated list of steps to execute (useful for debugging)
+        type: str
+        default: all
+
+      hydra_options:
+        description: Other configuration parameters to override
+        type: str
+        default: ''
+
+    # For notes on the command syntax see https://mlflow.org/docs/latest/projects.html#command-syntax
+    # If you call the project with additional parameters not listed in the parameters field i.e. "main.steps",
+    # MLflow passes them using --key value syntax, hence main.steps is passed as --main.steps=.....
+    # The \\ removes the significance of ' to it become part of the command line prompt
+    # So a call of
+    # mlflow run . -P steps=train_random_forest, basic_cleaning \
+                   -P hydra_options="modeling.random_forest.max_depth=10"
+    # Effectively runs the following command in the terminal
+    # python main.py \
+    #    main.steps='train_random_forest, basic_cleaning' \
+    #    "modeling.random_forest.max_depth=10"
+    # Which overrides the main.steps and modeling.random_forest.max_depth hydra config values
+
+    command: "python main.py main.steps=\\'{steps}\\' $(echo {hydra_options})"

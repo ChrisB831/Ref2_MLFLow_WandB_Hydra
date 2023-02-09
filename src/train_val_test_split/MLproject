@@ -1,0 +1,31 @@
+name: download_file
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+
+      mlf_input:
+        description: Artifact to split (a CSV file)
+        type: string
+
+      mlf_test_size:
+        description: Size of the test split. Fraction of the dataset, or number of items
+        type: string
+
+      mlf_random_seed:
+        description: Seed for the random number generator. Use this for reproducibility
+        type: string
+        default: 42
+
+      mlf_stratify_by:
+        description: Column to use for stratification (if any)
+        type: string
+        default: 'none'
+
+
+    command: "python run.py \
+      {mlf_input} \
+      {mlf_test_size} \
+      --random_seed {mlf_random_seed} \
+      --stratify_by {mlf_stratify_by}"

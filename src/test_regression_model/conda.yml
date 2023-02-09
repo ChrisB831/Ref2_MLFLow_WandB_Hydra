@@ -1,0 +1,11 @@
+name: test_regression_model
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pandas=1.2.3    # Was 1.1.4
+  - pip=20.3.3
+  - mlflow=2.0.1   # Was 1.14.1. Installed 2.0.1
+  - scikit-learn=0.24.1
+  - pip:
+      - wandb==0.13.3    # Was 0.10.21. Installed v0.13.3 to overcome protobuf errors

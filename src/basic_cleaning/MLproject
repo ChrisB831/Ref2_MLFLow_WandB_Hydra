@@ -1,0 +1,41 @@
+name: download_data
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+
+      mlf_input_artifact:
+        description: Fully qualified name for the input artifact
+        type: str
+
+      mlf_output_artifact:
+        description: Fully qualified name for the output artifact
+        type: str
+
+      mlf_output_type:
+        description: Type of the output artifact
+        type: str
+        default: processed_data
+
+      mlf_output_description:
+        description: Description of the output artifact
+        type: str
+
+      mlf_min_price:
+        description: Minimum price, used for clipping
+        type: float
+
+      mlf_max_price:
+        description: Maximum price, used for clipping
+        type: float
+
+
+    command: >-
+      python run.py \
+        --input_artifact {mlf_input_artifact} \
+        --output_artifact {mlf_output_artifact} \
+        --output_type {mlf_output_type} \
+        --output_description {mlf_output_description} \
+        --min_price {mlf_min_price} \
+        --max_price {mlf_max_price}

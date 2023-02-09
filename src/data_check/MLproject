@@ -1,0 +1,33 @@
+name: data_check
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+      mlf_csv:
+        description: Input CSV file to be tested
+        type: string
+
+      mlf_ref:
+        description: Reference CSV file to compare the new csv to
+        type: string
+
+      mlf_kl_threshold:
+        description: Threshold for the KL divergence test on the neighborhood group column
+        type: float
+
+      mlf_min_price:
+        description: Minimum accepted price
+        type: float
+
+      mlf_max_price:
+        description: Maximum accepted price
+        type: float
+
+
+    command: "pytest . -vv \
+      --csv {mlf_csv} \
+      --ref {mlf_ref} \
+      --kl_threshold {mlf_kl_threshold} \
+      --min_price {mlf_min_price} \
+      --max_price {mlf_max_price}"

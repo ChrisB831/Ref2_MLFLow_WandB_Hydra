@@ -1,0 +1,13 @@
+name: download_data
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pandas=1.2.3
+  - pip=20.3.3
+  - pyarrow=2.0
+#  - numpy=1.23.5    # Handles an AttributeError: module 'numpy' has no attribute 'float' issue
+  - pip:
+      - wandb==0.13.3    # Was 0.10.21
+                         # Installed v0.13.3 to overcome protobuf errors

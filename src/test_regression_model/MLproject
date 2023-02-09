@@ -1,0 +1,16 @@
+name: test_model
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+
+      mlf_mlflow_model:
+        description: An MLflow serialized model
+        type: string
+
+      mlf_test_dataset:
+        description: The test artifact
+        type: string
+
+    command: "python run.py  --mlflow_model {mlf_mlflow_model} --test_dataset {mlf_test_dataset}"

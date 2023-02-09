@@ -1,6 +1,6 @@
 # Summary
 This project focusses primarliy on MLFlow.  
-Although an ML model is built, it is trivial in design and is not the focus of the MLOps based repo
+Although an ML model is built, it is trivial in design and is not the focus of this MLOps based repo
 
 This code contains the following MLflow components:
 * eda

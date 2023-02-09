@@ -1,5 +1,6 @@
 # Summary
-This project focusses primarliy on MLFlow. 
+This project focusses primarliy on MLFlow.  
+Although an ML model is built, it is trivial in design and is not the focus of the MLOps based repo
 
 This code contains the following MLflow components:
 * eda
@@ -85,4 +86,4 @@ W&B (this is private)
 https://wandb.ai/chris-bonham831/nyc_airbnb?workspace=user-chris-bonham831
 
 Github (as this is forked its public)
-https://github.com/ChrisB831/build-ml-pipeline-for-short-term-rental-prices
+https://github.com/ChrisB831/p2_MLFLow_WandB_Hydra.git

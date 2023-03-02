@@ -20,13 +20,13 @@ modeling -> random_forest -> n_estimators to 10 and etl->min_price to 50:
 3d)  To download version 1.0.0 of the inference pipeline from my github repo, and apply it
      to a new dataset
         mlflow run \
-            https://github.com/ChrisB831/build-ml-pipeline-for-short-term-rental-prices.git \
+            https://github.com/ChrisB831/Ref2_MLFLow_WandB_Hydra.git \
             -v 1.0.0 \
             -P hydra_options="etl.sample='sample2.csv'"
 
     Use version 1.0.1
     mlflow run \
-        https://github.com/ChrisB831/build-ml-pipeline-for-short-term-rental-prices.git \
+        https://github.com/ChrisB831/Ref2_MLFLow_WandB_Hydra.git \
         -v 1.0.1 \
         -P hydra_options="etl.sample='sample2.csv'"
 '''

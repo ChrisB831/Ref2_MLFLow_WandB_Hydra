@@ -9,7 +9,7 @@ MLflow component call (in isolation)
 1) Create and activate a conda environment that contains Mlflow v2.0.1
 2) Go to the route of this project
 3a) Execute with default parameters
-    mlflow run . -P steps=basic_cleaning
+    mlflow run . -P steps=train_random_forest
 3b) Execute and override a single parameter using hydra
     mlflow run . -P steps=train_random_forest \
                  -P hydra_options="modeling.random_forest.max_depth=10"
